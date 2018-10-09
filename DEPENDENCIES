@@ -1,0 +1,46 @@
+####### libmlx2
+
+
+# Ubuntu like systems:
+sudo apt-get install libxml2-dev libcurl4-openssl-dev uuid-dev 
+sudo apt-get install libbsd-dev
+
+### Manual installation
+Download list :
+ftp://xmlsoft.org/libxml2
+Download archive :
+ftp://xmlsoft.org/libxml2/libxml2-2.9.4-rc1.tar.gz
+Install :
+./configure ; make ; make install
+Link in makefile :
+-I ../libxml2/include
+-L ../libxml2/.libs -lxml2
+
+# libwebsocket
+git clone https://github.com/warmcat/libwebsockets.git
+mkdir build
+cd build/
+#openssl on raspbian
+sudo apt-get libssl-dev
+cmake ..
+make
+make install
+
+### Automatic installation
+Required packets :
+- libxml2 for library
+- libxml2-dev for header files
+Example with apt-get :
+sudo apt-get install libxml2 libxml2-dev
+
+Lib JSON -> (macos needs automake - brew install automake ) (linux needs libtool)
+#sudo apt-get install libjson-c-dev
+git clone https://github.com/json-c/json-c
+sh autogen.sh
+./configure
+make
+make install
+
+## Some linux :
+install uuid-dev package 
+sudo apt-get install libcurl4-gnutls-dev

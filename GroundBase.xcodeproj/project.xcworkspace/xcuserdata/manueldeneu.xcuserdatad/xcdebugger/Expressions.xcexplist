@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GBObjectAddChild:GBObject.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBArray*)object-&gt;_children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBObjectRelease:GBObject.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBXMLNode*)object-&gt;*object">
+            </PersistentString>
+            <PersistentString
+               value = "(GBArray*)base-&gt;_children">
+            </PersistentString>
+            <PersistentString
+               value = "(GBString*)$2-&gt;head-&gt;data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBBinCoderFinalize:GBBinCoder.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(binn*)self-&gt;coderDataPtr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLDocumentCreateRootNode:GBXMLDocument.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(xmlDocPtr)document-&gt;super.node">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBRelease:GBObject.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(const GBString*)object">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "serviceClientConnectionRequest:testGBUPCService.c">
+      </ContextState>
+      <ContextState
+         contextName = "CoderAddCollection:GBXMLCoder.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBArray*)set">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBObjectAlloc:GBObject.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBUSB*)pTemp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SequenceIteratorCreateKeyList:GBSequenceType.c">
+      </ContextState>
+      <ContextState
+         contextName = "testIPCMessageBridge:testGBUPCService.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(long)upcMsg.mtype">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLNodeAddGBCollectionForKey:GBXMLNode.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBArray*)collection">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBObjectGetClassName:GBObject.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLNodeGetString:GBXMLNode.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBArray*)node-&gt;_obj._children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBTCPSocketConnectToEndPoint:GBSocket.c">
+      </ContextState>
+      <ContextState
+         contextName = "serviceDidReceiveData:testGBUPCService.c">
+      </ContextState>
+      <ContextState
+         contextName = "Internal_GBSetComparator:GBSet.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBNumber*)a">
+            </PersistentString>
+            <PersistentString
+               value = "(GBNumber*)b">
+            </PersistentString>
+            <PersistentString
+               value = "(GBString*)a">
+            </PersistentString>
+            <PersistentString
+               value = "(GBString*)b">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLNodeGetChildrenByName:GBXMLNode.c">
+      </ContextState>
+      <ContextState
+         contextName = "IsKindOfClass:GBObject.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBUSB*)obj">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLDocumentAddValue:GBXMLDocument.c">
+      </ContextState>
+      <ContextState
+         contextName = "IPCMessageBufferGetGBUPCMessage:GBUPC_Private.h">
+      </ContextState>
+      <ContextState
+         contextName = "CoderGetObject:GBBinCoder.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(const GBSet*)ret">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SetCreateIterator:Set.c">
+      </ContextState>
+      <ContextState
+         contextName = "testGBObject:testGBObject.c">
+      </ContextState>
+      <ContextState
+         contextName = "IPCClientSendMessage:IPCClient.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBObjectGetParent:GBObject.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBXMLNodeRelease:GBXMLNode.c">
+      </ContextState>
+      <ContextState
+         contextName = "CoderAddObject:GBXMLCoder.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GBArray*)object">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "atomsRelease:GBString.c">
+      </ContextState>
+      <ContextState
+         contextName = "CoderFinalize:GBXMLCoder.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBUPCClientConnectToService:GBUPCClient.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBUPCEndPointDescriptionRelease:GBUPC.h">
+      </ContextState>
+      <ContextState
+         contextName = "StrImpl_getStringAtomsList:StringImpl.c">
+      </ContextState>
+      <ContextState
+         contextName = "GBUPCServiceSendMessage:GBUPCService.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(IPCClient*)service-&gt;_server-&gt;_clients-&gt;head-&gt;data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GBCollectionEquals:GBCollectionType.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(const GBSet*)object1">
+            </PersistentString>
+            <PersistentString
+               value = "(const GBSet*)object2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

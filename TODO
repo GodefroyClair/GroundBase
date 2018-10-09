@@ -1,0 +1,21 @@
+DONE:
+- Implement GBTimers with socketfd on Linux instead of the timerwheel. Done in version 5.4.0.
+- testThread2 is failing -> done in ver 5.5.2 (to check on linux)
+
+BUGS
+
+
+TODO
+- GB::Variant::getSize : getDimension might be a better name!!
+- Check CONST_CAST ! 
+- Changes required include path to '/usr/local/include' instead of  '/usr/local/include/GroundBase'
+- Change 'MessageType' to something like 'MessageID' param in UPC Message to point the fact that it's a numeric value.
+- Investigate difference between allocated/deallocated bytes in the end (EG. Bytes Allocated 1079 / Freed 1267 ) . No leaks involved.
+- GBXMLDocument : check usage of pointers in GBXMLDocumentInitWithBuffer and GBXMLDocumentInitWithFile ( filepath NULL, buffer NULL)
+- GBXMLDocument : usage of GBXMLDocumentParseFile vs GBXMLDocumentInitWithFile
+- GBXMLDocument : usage of GBXMLDocumentParseBuffer vs GBXMLDocumentInitWithBuffer
+- Complete TODO list
+
+Questions:
+- Should we allow to retain/release const GBObjects since we have to const-cast pointers? And also is this a good design?
+- Should GBRunLoopDispatchAsync/GBRunLoopDispatchAfter be const since they modify the runloop?

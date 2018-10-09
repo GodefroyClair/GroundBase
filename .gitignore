@@ -1,0 +1,9 @@
+*.DS_Store
+*.o
+TestGB
+file.xml
+libGroundBase.so
+text.plist
+doxyConfiguration.bak
+Documentation/
+

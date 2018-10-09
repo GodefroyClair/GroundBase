@@ -1,0 +1,49 @@
+GBPropertyList.h	: 100%. Needs double check.
+GBDictionary.h		: 100%. Needs double check.
+GBRunLoop.h			: 100%. Needs double check.
+GBTimer.h			: 100%. Needs double check.
+GBJSON.h			: 100%. Needs double check.
+GBString.h			: 100%. Needs double check.
+GBProcessLock.h		: 100%. Needs double check but is deprecated, so mostly needs redesign :)
+GBObject.h			: 80%
+GBRunLoopSource.h	: 80%
+GBTypes.h			: 80%
+GBNumber.h			: 80%
+GBXMLNode.h			: 50%
+GBSocket.h			: 50%
+GBThread.h			: 50%
+GBUPCClient.h		: 50%
+GBUPCService.h		: 40%
+GBFDSource.h		: 20%
+GBBinCoder.h		: 10%
+GBUPCEndPoint.h		: 10%
+GBCommons.h			: 10%
+GBList.h			: 10%
+GBArray.h			: 10%
+GroundBase.h		: 5% Need to write the main file content.
+GBUPC.h				: 5%
+GBContainer.h		: 5%
+GBSet.h				: 5%
+GBHash.h			: 1%
+GBSequence.h		: 1%
+GBXMLDocument.h		: 1%
+
+GBSharedMem.h		: TODO
+
+GBRunLoop.hpp		: 100%. Needs double check.
+GBJSON.hpp			: 100%. Needs double check.
+GBTimer.hpp			: 100%. Needs double check.
+GBUPC.hpp			: 100%. Needs double check.
+GBPropertyList.hpp	: 100%. Needs double check.
+GBDictionary.hpp	: 100%. Needs double check.
+GBVariant.hpp		: 60%
+GBFDSource.hpp		: 20%
+GBUPCService.hpp	: 1%
+GBUPCClient.hpp		: 1%
+GBArray.hpp			: 1%
+GBObject.hpp		: 1%
+GBSharedMemory.hpp	: 1%
+GBString.hpp		: 1%
+GroundBase.hpp		: 1%
+
+
