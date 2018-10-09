@@ -128,7 +128,7 @@ GBBinCoder* GBBinCoderInitWithContent(const void* buf )
 {
     if( buf )
     {
-        binn * ptr =binn_open( buf );
+        binn * ptr =binn_open( CONST_CAST(void*) buf );
         
         if( ptr)
         {
@@ -391,7 +391,7 @@ BOOLEAN_RETURN uint8_t GBBinCoderEncodeString( GBBinCoder* coder, const GBString
         
         binn* val = ConvertGBStringToBinn(value);
         
-        const uint8_t ret = binn_object_set_value(coder->_ptr, (char*)GBStringGetCStr(key), val);
+        const uint8_t ret =(uint8_t) binn_object_set_value(coder->_ptr, (char*)GBStringGetCStr(key), val);
         binn_free(val);
         return ret;
         //return binn_object_set_str( coder->_ptr , (char*)GBStringGetCStr(key), (char*) GBStringGetCStr(value));
@@ -552,7 +552,7 @@ GBNumber* GBBinCoderDecodeNumber( const GBBinCoder* coder ,const GBString* key )
     if (coder && key)
     {
         binn val;
-        if( binn_object_get_value(coder->_ptr, GBStringGetCStr(key), &val))
+        if( binn_object_get_value(coder->_ptr,CONST_CAST(char*) GBStringGetCStr(key), &val))
         {
             
             return BinnGetNumber(&val);
@@ -594,7 +594,7 @@ GBContainer* GBBinCoderDecodeContainerWithOuputType( const GBBinCoder* coder ,co
     if (coder && key)
     {
         binn list;
-        if( binn_object_get_value(coder->_ptr, GBStringGetCStr(key), &list))
+        if( binn_object_get_value(coder->_ptr, CONST_CAST(char*)GBStringGetCStr(key), &list))
         {
             if( binn_type(&list) != BINN_LIST)
                 return NULL;
@@ -641,7 +641,7 @@ GBSequence* GBBinCoderDecodeSequence( const GBBinCoder* coder ,const GBString* i
     if (coder && inKey)
     {
         binn object;
-        if( binn_object_get_value(coder->_ptr, GBStringGetCStr(inKey), &object))
+        if( binn_object_get_value(coder->_ptr,CONST_CAST(char*) GBStringGetCStr(inKey), &object))
         {
             if( binn_type(&object) != BINN_OBJECT)
                 return NULL;
