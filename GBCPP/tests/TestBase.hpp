@@ -38,4 +38,6 @@ bool testPropertyList();
 bool testUPCClient();
 bool testUPCService();
 
+bool testGBThread();
+
 #endif /* TestBase_hpp */

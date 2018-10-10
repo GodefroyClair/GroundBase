@@ -28,6 +28,8 @@ bool testRunLoop()
     assert(rl.getNumSources() == 0);
     assert(rl.getNumFDSources() == 0);
     
+    
+    
     GB::Timer t1([ &t1 ]()
                  {
                      assert(t1.isActive());

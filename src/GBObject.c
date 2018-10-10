@@ -267,7 +267,7 @@ GB_HOT void* GBObjectAlloc( GBAllocator allocator , const void* _class, ...)
     
     base->strongReferences = NULL;
     
-    base->_lock =(pthread_mutex_t) PTHREAD_MUTEX_INITIALIZER;
+    
     
     //pthread_mutex_init(&base->_lock , NULL);
 
@@ -529,7 +529,7 @@ BOOLEAN_RETURN uint8_t GBRelease (GBRef object)
                 DEBUG_ASSERT(ArrayGetSize(objBase->strongReferences) == 0);
                 ArrayFree(objBase->strongReferences);
                 objBase->strongReferences = NULL;
-                pthread_mutex_destroy( &objBase->_lock );
+                
                 
             }
 
@@ -806,12 +806,13 @@ GBObjectState GBObjectGetState(GBRef object)
     
     return objectBase->state;
 }
-
+/*
 pthread_mutex_t* GBObjectGetMutex( GBRef object)
 {
     GBObjectBase *objectBase =( GBObjectBase *) object;
     return &(objectBase->_lock);
 }
+ */
 
 GBHashCode GBHash(GBRef object)
 {
@@ -835,7 +836,7 @@ BOOLEAN_RETURN uint8_t GBObjectCanBeSerialized(GBRef object)
 */
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
-
+/*
 BOOLEAN_RETURN uint8_t  GBObjectLock( GBObject* object)
 {
     if (object == NULL)
@@ -863,6 +864,7 @@ BOOLEAN_RETURN uint8_t  GBObjectUnlock( GBObject*  object)
     
     return pthread_mutex_unlock( &objectBase->_lock ) == 0;
 }
+ */
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /*

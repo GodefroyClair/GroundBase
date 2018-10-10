@@ -68,7 +68,7 @@ static void mainThread()
     while (value < 100)
     {
         
-        if ( GBObjectTryLock(object))
+        if ( GBThreadTryLock(object))
         {
             printf("[Main Thread] got lock '%s' \n", GBStringGetCStr(object));
             
@@ -76,7 +76,7 @@ static void mainThread()
             
             GBStringSetContentWithFormat(object, "Hello%i" , value);
             
-            GBObjectUnlock(object);
+            GBThreadUnlock(object);
         }
         usleep(1000*10);
     }
@@ -92,14 +92,14 @@ static void* secondThread(void* data)
     while (value < 100)
     {
         
-        if ( GBObjectTryLock(object))
+        if ( GBThreadTryLock(object))
         {
             printf("[Second Thread] got lock '%s' \n", GBStringGetCStr(object));
             
             value++;
             GBStringSetContentWithFormat(object, "Hello%i" , value);
             
-            GBObjectUnlock(object);
+            GBThreadUnlock(object);
         }
         usleep(1000*10);
     }

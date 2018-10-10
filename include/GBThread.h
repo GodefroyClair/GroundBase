@@ -124,6 +124,10 @@ BOOLEAN_RETURN uint8_t GBThreadWaitForMS( GBThread* thread , GBTimeMS timeout );
 
 
 BOOLEAN_RETURN uint8_t GBThreadCalledFromThis( const GBThread* thread);
+
+BOOLEAN_RETURN uint8_t  GBThreadLock( GBThread* thread);
+BOOLEAN_RETURN uint8_t  GBThreadTryLock( GBThread*  thread);
+BOOLEAN_RETURN uint8_t  GBThreadUnlock( GBThread*  thread);
     
 GB_END_DCL
 

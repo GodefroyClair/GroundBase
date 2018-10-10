@@ -47,6 +47,8 @@
 #include "TimersWheel/TimersWheel.h"
 #endif
 
+
+
 static void * RunLoop_ctor(void * _self, va_list * app);
 static void * RunLoop_dtor (void * _self);
 static uint8_t  RunLoop_equals (const void * _self, const void * _b);
@@ -91,6 +93,8 @@ static void * RunLoop_ctor(void * _self, va_list * app)
         self->_fdSources = GBListInit();
         self->_timers  = GBListInit();
         //self->condWait = (pthread_cond_t)PTHREAD_COND_INITIALIZER;
+        
+        self->_lock =(pthread_mutex_t) PTHREAD_MUTEX_INITIALIZER;
 
         self->_runningThread_id = NULL;
         // Async
@@ -156,6 +160,8 @@ static void * RunLoop_dtor (void * _self)
         {
             DEBUG_ASSERT( 0);
         }
+        
+        pthread_mutex_destroy( &self->_lock );
 
 #ifndef USE_TIMER_FD    
         TimerWheelRelease( self->_timersWheel );
@@ -675,9 +681,8 @@ static BOOLEAN_RETURN uint8_t Internal_CheckSource( GBRunLoop* runLoop , Abstrac
 static BOOLEAN_RETURN uint8_t Internal_GBRunLoopHandleAsyncCalls(GBRunLoop* self)
 {
     DEBUG_ASSERT(self);
-    //DEBUG_ASSERT(ArrayGetSize( self->_asyncCalls ) > 0);
-    
-    GBObjectLock(self);
+
+    GBRunLoopLock(self);
     
     uint8_t ret= 0;
     if( ArrayGetSize( self->_asyncCalls ) > 0)
@@ -701,7 +706,7 @@ static BOOLEAN_RETURN uint8_t Internal_GBRunLoopHandleAsyncCalls(GBRunLoop* self
 	    DEBUG_LOG("Internal_GBRunLoopHandleAsyncCalls async calls queue is empty! ");
     }
     
-    GBObjectUnlock(self);
+    GBRunLoopUnlock(self);
     return ret;
     
 }
@@ -751,4 +756,29 @@ static void Internal_GBRunLoopUpdateTimers(GBRunLoop *self  , GBTimeMS timeSpent
             Internal_GBTimerUpdateChanges( self, timer );
         }
     }
+}
+
+
+
+BOOLEAN_RETURN uint8_t  GBRunLoopLock( GBRunLoop* rl)
+{
+    if (rl == NULL)
+        return 0;
+    return pthread_mutex_lock( &rl->_lock ) == 0;
+}
+
+BOOLEAN_RETURN uint8_t  GBRunLoopTryLock( GBRunLoop*  rl)
+{
+    if (rl == NULL)
+        return 0;
+    
+    return pthread_mutex_trylock( &rl->_lock ) == 0;
+}
+
+BOOLEAN_RETURN uint8_t  GBRunLoopUnlock( GBRunLoop*  rl)
+{
+    if (rl == NULL)
+        return 0;
+    
+    return pthread_mutex_unlock( &rl->_lock ) == 0;
 }

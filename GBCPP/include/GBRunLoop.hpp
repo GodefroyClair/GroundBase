@@ -198,6 +198,7 @@ namespace GB
          */
         bool async( AsyncCallback method)
         {
+            // FIXME Will leak if the runloop is stopped before the callback is invoked -> delete will never be called
             AsyncCallback *m = new AsyncCallback(method); // must make a copy since the callback can go out of scope.
             
             return GBRunLoopDispatchAsync(_ptr , [](GBRunLoop*  , void* data )
@@ -217,6 +218,7 @@ namespace GB
          */
         bool after( AsyncCallback method , GBTimeMS timeOutMs)
         {
+            // FIXME Will leak if the runloop is stopped before the callback is invoked -> delete will never be called
             AsyncCallback *m = new AsyncCallback(method); // must make a copy since the callback can go out of scope.
             
             return GBRunLoopDispatchAfter(_ptr , [](GBRunLoop*  , void* data )
@@ -228,6 +230,8 @@ namespace GB
                                           }, m ,timeOutMs);
         }
         
+        
+
         
     };
 }

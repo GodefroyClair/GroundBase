@@ -126,6 +126,7 @@ namespace GB
             return GBObjectGetClass(_ptr);
         }
         
+        /*
         bool lock()
         {
             return GBObjectLock(_ptr);
@@ -140,6 +141,7 @@ namespace GB
         {
             return GBObjectUnlock(_ptr);
         }
+         */
 
     protected:
 

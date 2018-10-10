@@ -42,7 +42,7 @@ GB_HOT BOOLEAN_RETURN uint8_t GBRunLoopDispatchAsync( GBRunLoop* runLoop , GBRun
     if( runLoop->_runningThread_id != pthread_self())
     {
         shouldUnlock = 1;
-        GBObjectLock( runLoop);
+        GBRunLoopLock( runLoop);
         
     }
     
@@ -66,7 +66,7 @@ GB_HOT BOOLEAN_RETURN uint8_t GBRunLoopDispatchAsync( GBRunLoop* runLoop , GBRun
 
     if( shouldUnlock)
     {
-        GBObjectUnlock(  runLoop);
+        GBRunLoopUnlock(  runLoop);
     }
     return ret;
 }

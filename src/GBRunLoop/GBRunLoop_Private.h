@@ -40,6 +40,7 @@ struct _GBRunLoop
     uint8_t         _shouldStop;
     uint8_t         _running;
     
+    pthread_mutex_t _lock;
     pthread_t   _runningThread_id;
     
     GBList*      _fdSources;
@@ -58,5 +59,9 @@ struct _GBRunLoop
 
 void Internal_GBRunLoopInvokeCall(GBRunLoop* self , AsyncCall *task);
 
+
+BOOLEAN_RETURN uint8_t  GBRunLoopLock( GBRunLoop* rl);
+BOOLEAN_RETURN uint8_t  GBRunLoopTryLock( GBRunLoop*  rl);
+BOOLEAN_RETURN uint8_t  GBRunLoopUnlock( GBRunLoop*  rl);
 
 #endif /* GBRunLoop_Private_h */

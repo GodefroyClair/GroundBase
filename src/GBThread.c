@@ -32,6 +32,8 @@
 
 #include "GBObject_Private.h"
 
+
+
 static void InternaL_ThreadDidStop( GBThread* self);
 static void InternaL_ThreadStart( GBThread* self);
 
@@ -54,6 +56,7 @@ struct _GBThread
     pthread_cond_t  condWait;
     
 
+    pthread_mutex_t _lock;
     pthread_cond_t  _condInitialized; // signal() 'ed after thread is spawned
     
     GBString *name;
@@ -89,6 +92,9 @@ static void * ctor(void * _self, va_list * app)
         self->_isRunning = 0;
         self->_userContext = NULL;
         self->name = NULL;
+        
+        self->_lock =(pthread_mutex_t) PTHREAD_MUTEX_INITIALIZER;
+        
         pthread_cond_init( &self->condWait , NULL);
         pthread_cond_init( &self->_condInitialized , NULL);
 
@@ -105,6 +111,8 @@ static void * dtor (void * _self)
     {
         pthread_cond_destroy( &self->condWait );
         pthread_cond_destroy( &self->_condInitialized );
+        
+        pthread_mutex_destroy( &self->_lock );
         
         if( self->name)
         {
@@ -204,10 +212,10 @@ static void InternaL_ThreadStart( GBThread* self)
     {
         Internal_setThreadName( GBStringGetCStr( self->name));
     }
-    GBObjectLock(self);
+    GBThreadLock(self);
     self->_isRunning = 1;
     pthread_cond_signal(  &self->_condInitialized );
-    GBObjectUnlock(self);
+    GBThreadUnlock(self);
     
 
     self->_main(self);
@@ -252,15 +260,15 @@ BOOLEAN_RETURN uint8_t GBThreadWaitForStart( GBThread* thread )
     if( thread == NULL )
         return 0;
     
-    GBObjectLock( CONST_CAST(GBThread*) thread);
+    GBThreadLock( CONST_CAST(GBThread*) thread);
     
     while ( thread->_isRunning == 0 )
     {
-        pthread_cond_wait( &thread->_condInitialized, &thread->base._lock);
+        pthread_cond_wait( &thread->_condInitialized, &thread->_lock);
         
     }
     
-    GBObjectUnlock( CONST_CAST(GBThread*) thread);
+    GBThreadUnlock( CONST_CAST(GBThread*) thread);
     return 1;
 }
 
@@ -319,7 +327,7 @@ BOOLEAN_RETURN uint8_t GBThreadWaitForever( GBThread* thread )
     if (thread == NULL)
         return 0;
     
-    return pthread_cond_wait(&thread->condWait, &thread->base._lock) == 0;
+    return pthread_cond_wait(&thread->condWait, &thread->_lock) == 0;
 }
 
 BOOLEAN_RETURN uint8_t GBThreadWaitForMS( GBThread* thread , GBTimeMS timeout )
@@ -331,7 +339,7 @@ BOOLEAN_RETURN uint8_t GBThreadWaitForMS( GBThread* thread , GBTimeMS timeout )
     t.tv_nsec = (timeout % 1000)*1000;
     t.tv_sec = (timeout / 1000);
     
-    return pthread_cond_timedwait(&thread->condWait, &thread->base._lock, &t) == 0;
+    return pthread_cond_timedwait(&thread->condWait, &thread->_lock, &t) == 0;
 }
 
 BOOLEAN_RETURN uint8_t GBThreadWake( GBThread* thread )
@@ -345,4 +353,30 @@ BOOLEAN_RETURN uint8_t GBThreadCalledFromThis( const GBThread* thread)
         return 0;
     
     return pthread_equal(pthread_self(), thread->thread_id) != 0;
+}
+
+
+
+
+BOOLEAN_RETURN uint8_t  GBThreadLock( GBThread* thread)
+{
+    if (thread == NULL)
+        return 0;
+    return pthread_mutex_lock( &thread->_lock ) == 0;
+}
+
+BOOLEAN_RETURN uint8_t  GBThreadTryLock( GBThread*  thread)
+{
+    if (thread == NULL)
+        return 0;
+
+    return pthread_mutex_trylock( &thread->_lock ) == 0;
+}
+
+BOOLEAN_RETURN uint8_t  GBThreadUnlock( GBThread*  thread)
+{
+    if (thread == NULL)
+        return 0;
+
+    return pthread_mutex_unlock( &thread->_lock ) == 0;
 }

@@ -160,6 +160,7 @@
 		5979B62A1FC6D1A500BA0CCB /* testThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 5979B6131FC6D1A400BA0CCB /* testThread.c */; };
 		5981478B1D7B823800E48874 /* libjson-c.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 598147891D7B821A00E48874 /* libjson-c.3.dylib */; };
 		5983F3D61FD831160012963B /* testGBSocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 5983F3D51FD831160012963B /* testGBSocket.c */; };
+		59B529B9216DCE7F007031D2 /* testGBThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B529B8216DCE7F007031D2 /* testGBThread.cpp */; };
 		59C22A1D1FCD4D2B001A8BBD /* GBPropertyList.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 59C22A1C1FCD4D20001A8BBD /* GBPropertyList.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		59C22A1F1FCD4D7B001A8BBD /* testPropertyList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59C22A1E1FCD4D7B001A8BBD /* testPropertyList.cpp */; };
 		59C22A221FCD6A09001A8BBD /* testGBNumber.c in Sources */ = {isa = PBXBuildFile; fileRef = 59C22A211FCD6A09001A8BBD /* testGBNumber.c */; };
@@ -382,6 +383,8 @@
 		5983F3D41FD831160012963B /* testGBSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testGBSocket.h; sourceTree = "<group>"; };
 		5983F3D51FD831160012963B /* testGBSocket.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = testGBSocket.c; sourceTree = "<group>"; };
 		59A9180B1FDAC8D8000C3260 /* GBUPC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GBUPC.hpp; sourceTree = "<group>"; };
+		59B529B8216DCE7F007031D2 /* testGBThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testGBThread.cpp; sourceTree = "<group>"; };
+		59B529BA216DCE94007031D2 /* TestBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestBase.hpp; sourceTree = "<group>"; };
 		59C22A1C1FCD4D20001A8BBD /* GBPropertyList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GBPropertyList.hpp; sourceTree = "<group>"; };
 		59C22A1E1FCD4D7B001A8BBD /* testPropertyList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testPropertyList.cpp; sourceTree = "<group>"; };
 		59C22A201FCD6A09001A8BBD /* testGBNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testGBNumber.h; sourceTree = "<group>"; };
@@ -685,6 +688,8 @@
 			isa = PBXGroup;
 			children = (
 				593AD5F11FAC590E005402D2 /* main.cpp */,
+				59B529BA216DCE94007031D2 /* TestBase.hpp */,
+				59B529B8216DCE7F007031D2 /* testGBThread.cpp */,
 				5925CB9C1FD92C9300C60B2B /* testGBUPC.cpp */,
 				59C22A1E1FCD4D7B001A8BBD /* testPropertyList.cpp */,
 				5979B5EA1FC6C67600BA0CCB /* testSharedMemory.cpp */,
@@ -1031,6 +1036,7 @@
 			files = (
 				5979B5EB1FC6C67600BA0CCB /* testSharedMemory.cpp in Sources */,
 				5925CB9E1FD92C9300C60B2B /* testGBUPC.cpp in Sources */,
+				59B529B9216DCE7F007031D2 /* testGBThread.cpp in Sources */,
 				593AD6431FACD899005402D2 /* TestRuntime.cpp in Sources */,
 				593AD6101FAC5933005402D2 /* main.cpp in Sources */,
 				593AD6461FACD989005402D2 /* TestVariant.cpp in Sources */,

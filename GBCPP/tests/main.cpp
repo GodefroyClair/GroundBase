@@ -24,6 +24,9 @@ int main(int , const char ** )
     testArray();
     testLambdaString();
     
+    testGBThread();
+    
+    
     testVariant();
     testJSON();
     

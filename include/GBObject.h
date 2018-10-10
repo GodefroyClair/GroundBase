@@ -160,10 +160,11 @@ GBSize GBObjectGetObjectsCount(void);
  */
 //BOOLEAN_RETURN uint8_t GBObjectCanBeSerialized(GBRef object);
 
+/*
 BOOLEAN_RETURN uint8_t  GBObjectLock( GBObject* object);
 BOOLEAN_RETURN uint8_t  GBObjectTryLock( GBObject* object);
 BOOLEAN_RETURN uint8_t  GBObjectUnlock( GBObject* object);
-
+*/
 
 //#define GBObjectCast(object , class) ({ GBRef cast = (class*) object;  GBRef retval = GBObjectIsValid(cast)? object : NULL;  retval;})
 

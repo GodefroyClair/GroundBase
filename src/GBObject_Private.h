@@ -92,7 +92,7 @@ typedef struct _GBObjectBase
 
     Array* strongReferences;
 
-    pthread_mutex_t _lock;
+    //pthread_mutex_t _lock;
 
 }GBObjectBase;
 
@@ -112,7 +112,7 @@ GB_DEPRECATED("5.4.3") BOOLEAN_RETURN uint8_t GBObjectAddStrongReference( GBRef 
 
 GBObjectState GBObjectGetState(GBRef object);
 
-pthread_mutex_t* GBObjectGetMutex( GBRef object);
+//pthread_mutex_t* GBObjectGetMutex( GBRef object);
 
 
 const char* GBObjectGetClassNameC( GBRef object);
