@@ -31,12 +31,9 @@
 #ifndef GBNumber_h
 #define GBNumber_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <GBObject.h>
 
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBNumberClass;
 #define GBNumberClassName (const char*) "GBNumber"
@@ -187,7 +184,6 @@ long   GBNumberToLong(const GBNumber* self);
 // needs free
 char* GBNumberGetString( const GBNumber *number);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBNumber_h */

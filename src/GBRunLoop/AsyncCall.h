@@ -27,7 +27,7 @@
 
 #include <GroundBase.h>
 #include <GBRunLoop.h>
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 // those defs are not intended to be _that_ secret. They're used to return from poll for dispatch and wake up.
 #define SECRET_PIPE_BYTE  (uint8_t) 0x41

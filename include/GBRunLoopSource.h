@@ -30,11 +30,10 @@
 #ifndef GBRunLoopSource_h
 #define GBRunLoopSource_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
+
 #include <GBTypes.h>
+    
+GB_BEGIN_DCL
 
 /* **** **** **** */
 
@@ -85,8 +84,6 @@ void  GBRunLoopSourceSetUserContext(GBRunLoopSource* source , void* context );
  */
 void* GBRunLoopSourceGetUserContext( const GBRunLoopSource* source);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
     
 #endif /* GBRunLoopSource_h */

@@ -34,9 +34,7 @@ typedef struct
 } GBAllocator;
 
 extern const GBAllocator GBDefaultAllocator;
-
-// OLD Name, use GBDefaultAllocator instead. Will be removed at some point.
-#define DefaultAllocator GBDefaultAllocator
+extern const GBAllocator GBStackAllocator;
 
 
 /*

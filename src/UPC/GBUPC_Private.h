@@ -99,12 +99,14 @@ struct _UPCService
 };
 
 
+
+
 struct _UPCClientProxy
 {
-    GBFDSource* _socket;            // just a ref, not retained
-    void*       _userContext;
+    GBFDSource*   _socket;            // just a ref, not retained
+    void*         _userContext;
     GBUPCService *_attachedService;  // just a ref, not retained
-    uint8_t _canReadWrite;
+    uint8_t       _canReadWrite;
     
 };
 

@@ -27,7 +27,7 @@
 
 #include <GBCommons.h>
 #include "List.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 #include "LibUt/utlist.h"
 
 

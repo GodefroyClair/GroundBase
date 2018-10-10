@@ -25,7 +25,7 @@
 
 #include <string.h> // memmove
 #include "Array.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 #define ARRAY_MIN_CAPACITY (GBSize) 10
 

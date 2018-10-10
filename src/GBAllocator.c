@@ -30,6 +30,11 @@ static void* DefRealloc(void *ptr, GBSize size , const void *self);
 static void* DefCalloc( GBSize count, GBSize size , const void *self);
 static void  DefFree( void* ptr , const void *self);
 
+static void* StackMalloc(GBSize size , const void *self);
+static void* StackRealloc(void *ptr, GBSize size , const void *self);
+static void* StackCalloc( GBSize count, GBSize size , const void *self);
+static void  StackFree( void* ptr , const void *self);
+
 const GBAllocator GBDefaultAllocator =
 {
     DefMalloc,
@@ -38,6 +43,11 @@ const GBAllocator GBDefaultAllocator =
     DefFree,
     NULL
 };
+
+
+
+
+
 
 static void* DefMalloc(GBSize size , const void *self)
 {
@@ -62,6 +72,44 @@ static void  DefFree( void* ptr , const void *self)
     UNUSED_PARAMETER(self);
     GBFree(ptr);
 }
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** */
+
+const GBAllocator GBStackAllocator =
+{
+    StackMalloc,
+    StackRealloc,
+    StackCalloc,
+    StackFree,
+    NULL
+};
+
+
+static void* StackMalloc(GBSize size , const void *self)
+{
+    UNUSED_PARAMETER(self);
+    return GBMalloc(size );
+}
+
+static void* StackRealloc(void *ptr, GBSize size , const void *self)
+{
+    UNUSED_PARAMETER(self);
+    return GBRealloc(ptr, size);
+}
+
+static void* StackCalloc( GBSize count, GBSize size , const void *self)
+{
+    UNUSED_PARAMETER(self);
+    return GBCalloc(count, size);
+}
+
+static void  StackFree( void* ptr , const void *self)
+{
+    UNUSED_PARAMETER(self);
+    GBFree(ptr);
+}
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 void* GBMalloc(GBSize size)
 {

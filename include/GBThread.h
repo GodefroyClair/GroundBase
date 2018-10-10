@@ -30,15 +30,13 @@
 #ifndef GBThread_h
 #define GBThread_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 
 #include <GBCommons.h>
 #include <GBObject.h>
 #include <GBTypes.h>
 #include <GBString.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBThreadClass;
 
@@ -127,8 +125,6 @@ BOOLEAN_RETURN uint8_t GBThreadWaitForMS( GBThread* thread , GBTimeMS timeout );
 
 BOOLEAN_RETURN uint8_t GBThreadCalledFromThis( const GBThread* thread);
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBThread_h */

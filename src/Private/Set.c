@@ -18,7 +18,7 @@
 
 #include "Set.h"
 #include "RedBlack/rbtree.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 
 static void* Internal_GetPointer(tree_root *tree ,tree_node* node);

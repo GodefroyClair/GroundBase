@@ -70,6 +70,9 @@ static const GBObjectClass _GBUPCServiceClass =
     (char*)GBUPCServiceClassName
 };
 
+GBSize GBUPCService_Size = sizeof( struct _UPCService );
+
+
 GBObjectClassRef GBUPCServiceClass = & _GBUPCServiceClass;
 
 static void * GBUPCServiceCtor(void * _self, va_list * app)
@@ -162,6 +165,12 @@ static GBRef GBUPCServiceGetDescription (const void * _self)
     return NULL;
 }
 
+
+GBUPCService* GBUPCServiceInitWithName_OnStack(const GBString* serviceName , uint8_t* buffer )
+{
+    
+    return GBObjectAlloc(GBStackAllocator, GBUPCServiceClass , serviceName);
+}
 
 GBUPCService* GBUPCServiceInitWithName(const GBString* serviceName )
 {

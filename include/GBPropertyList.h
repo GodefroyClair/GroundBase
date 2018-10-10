@@ -33,16 +33,12 @@
 #ifndef GBPropertyList_h
 #define GBPropertyList_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
-
-
 #include <GBString.h>
 #include <GBDictionary.h>
 
 #include <GBObject.h>
+
+GB_BEGIN_DCL
 
 /*
  for XML format :
@@ -101,8 +97,6 @@ BOOLEAN_RETURN uint8_t GBPropertyListSaveFile( GBPropertyList* plist ,const GBSt
  */
 const GBDictionary* GBPropertyListGetRoot(const GBPropertyList* plist);
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBPropertyList_h */

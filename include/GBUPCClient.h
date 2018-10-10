@@ -31,15 +31,14 @@
 #ifndef GBUPCClient_h
 #define GBUPCClient_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 #include <GBObject.h>
 #include <GBString.h>
 #include <GBUPC.h>
 #include <GBRunLoop.h>
 #include <GBUPCEndPoint.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBUPCClientClass;
 #define GBUPCClientClassName (const char*) "GBUPCClient"
@@ -132,8 +131,6 @@ void* GBUPCClientGetUserContext(const GBUPCClient* client);
 BOOLEAN_RETURN uint8_t GBUPCClientSendMessage( GBUPCClient* client , const GBUPCMessage* message );
 BOOLEAN_RETURN uint8_t GBUPCClientSendObject( GBUPCClient* client , GBRef object , MsgType messageType );
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBUPCClient_h */

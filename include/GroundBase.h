@@ -58,16 +58,10 @@
 #define GROUNDBASE_VERSION_MIN   (int) 5
 #define GROUNDBASE_VERSION_PATCH (int) 3
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 #include <GBObject.h>
 #include <GBTypes.h>
 
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* GroundBase_h */

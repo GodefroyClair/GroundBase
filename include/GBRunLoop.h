@@ -32,13 +32,11 @@
 #ifndef GBRunLoop_h
 #define GBRunLoop_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <GBObject.h>
 #include <GBRunLoopSource.h>
 #include <GBTimer.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBRunLoopClass;
 #define GBRunLoopClassName (const char*) "GBRunLoop"
@@ -147,8 +145,6 @@ BOOLEAN_RETURN uint8_t GBRunLoopDispatchAsync( GBRunLoop* runLoop , GBRunLoopAsy
  */
 BOOLEAN_RETURN uint8_t GBRunLoopDispatchAfter( GBRunLoop* runLoop , GBRunLoopAsyncCallback callback, void* data , GBTimeMS waitTime);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
     
 #endif /* GBRunLoop_h */

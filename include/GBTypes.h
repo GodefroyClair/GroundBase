@@ -27,10 +27,9 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <GBCommons.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+GB_BEGIN_DCL
 
 /**
  * \file GBTypes.h
@@ -108,8 +107,6 @@ typedef uint64_t GBTimeMS;
  */
 static const GBTimeMS GBTimeMSInvalid = UINT64_MAX;
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBTypes_h */

@@ -22,7 +22,7 @@
 //#include <stdlib.h>
 #include <sys/types.h>
 
-#include "../../GBAllocator.h"
+#include <GBAllocator.h>
 #include "rbtree.h"
 
 tree_node RBNIL = {

@@ -27,13 +27,12 @@
 #ifndef GBContainer_h
 #define GBContainer_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBTypes.h>
 #include <GBObject.h>
 
+GB_BEGIN_DCL
 
 typedef GBObject GBContainer;
 
@@ -61,7 +60,6 @@ typedef int (*GBContainerIterator)(const GBContainer* container, GBRef value , v
 // Context will be passed to each call to GBContainerIterator. can be NULL.
 void GBContainerIterate(const GBContainer* container , GBContainerIterator method , void* context);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+    
 #endif /* GBContainer_h */

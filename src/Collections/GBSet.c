@@ -23,7 +23,7 @@
 //
 
 #include "GBSet.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 #include "GBContainer_Private.h"
 
 #include "../Private/LibUt/uthash.h"

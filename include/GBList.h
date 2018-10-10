@@ -31,13 +31,14 @@
 #ifndef GBList_h
 #define GBList_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 
 #include <GBObject.h>
 #include <GBContainer.h>
+#include <GBCommons.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBListClass;
 #define GBListClassName (const char*) "GBList"
@@ -82,8 +83,6 @@ for(  GBListIterator* COMBINE(__iter , __LINE__) = GBListBegin(list) ;\
 COMBINE(__iter , __LINE__) != NULL && ( value = GBListGetValue( COMBINE(__iter , __LINE__) ));\
 COMBINE(__iter , __LINE__) = GBListGetNext( COMBINE(__iter , __LINE__) ) )
 
-    
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBList_h */

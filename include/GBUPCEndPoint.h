@@ -30,13 +30,12 @@
 #ifndef GBUPCEndPoint_h
 #define GBUPCEndPoint_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 
 #include <GBString.h>
 #include <string.h> //memset
+
+GB_BEGIN_DCL
 
 typedef enum
 {
@@ -101,8 +100,6 @@ GB_ALWAYS_INLINE BOOLEAN_RETURN uint8_t GBUPCEndPointIsValid( const GBUPCEndPoin
                );
 }
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBUPCEndPoint_h */

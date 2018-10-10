@@ -106,6 +106,18 @@
 
 
 
+#ifdef __cplusplus
+#define GB_BEGIN_DCL extern "C" {
+#else
+#define GB_BEGIN_DCL
+#endif
 
+
+
+#ifdef __cplusplus
+#define GB_END_DCL }
+#else
+#define GB_END_DCL
+#endif
 
 #endif /* GroundBase_Commons_h */

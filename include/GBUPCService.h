@@ -36,9 +36,7 @@
 #ifndef GBUPCService_h
 #define GBUPCService_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 
 #include <GBTypes.h>
@@ -48,10 +46,12 @@ extern "C" {
 #include <GBUPC.h>
 #include <sys/types.h> // uid_t gid_t
 
+GB_BEGIN_DCL
+
 extern GBObjectClassRef GBUPCServiceClass;
 #define GBUPCServiceClassName (const char*) "GBUPCService"
 
-    
+extern GBSize GBUPCService_Size;
 /*!
  * @discussion An opaque GBUPCService instance.
  */
@@ -108,6 +108,8 @@ typedef struct
  On sucess ,will retain serviceName
  */
 GBUPCService* GBUPCServiceInitWithName(const GBString* serviceName );
+    
+GBUPCService* GBUPCServiceInitWithName_OnStack(const GBString* serviceName , uint8_t* buffer );
 
 void GBUPCServiceSetCallBacks( GBUPCService* service ,GBUPCServiceCallBacks callbacks );
 
@@ -158,8 +160,6 @@ typedef struct
 // Not filling pid for now.
 BOOLEAN_RETURN uint8_t GBUPCServiceGetClientCredentials( GBUPCService* service , const GBUPCClientProxy* client , GBUPCClientCredentials* credentials );
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBUPCService_h */

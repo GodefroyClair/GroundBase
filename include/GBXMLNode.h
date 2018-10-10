@@ -29,16 +29,16 @@
 #ifndef GBXMLNode_h
 #define GBXMLNode_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <stdint.h>
 
 #include <GBString.h>
 #include <GBObject.h>
 #include <GBDictionary.h>
+#include <GBCommons.h>
 
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBXMLNodeClass;
 #define GBXMLNodeClassName (const char*) "GBXMLNode"
@@ -182,9 +182,7 @@ BOOLEAN_RETURN uint8_t GBXMLNodeAddGBCollectionForKey(GBXMLNode* node , GBRef co
 BOOLEAN_RETURN uint8_t GBXMLNodeAddGBStringForKey(GBXMLNode* node , GBRef string , const GBString* key , uint8_t writeTypeAttr);
 /**/
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 
 #endif /* GBXMLNode_h */

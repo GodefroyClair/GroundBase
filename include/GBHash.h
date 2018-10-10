@@ -32,7 +32,12 @@
 
 #include <GBTypes.h>
 
+GB_BEGIN_DCL
+
 // will return 0 if data is null or len is zero.
 GBHashCode GBHashFunction(const char * data, size_t len);
+
+
+GB_END_DCL
 
 #endif /* GBHash_h */

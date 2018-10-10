@@ -32,13 +32,11 @@
 #ifndef GBString_h
 #define GBString_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <GBObject.h>
 #include <GBContainer.h>
 #include <GBArray.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBStringClass;
 #define GBStringClassName (const char*) "GBString"
@@ -244,9 +242,7 @@ GBString* GBStringByRemovingChars(const GBString* string , const char* chars);
  */
 GBHashCode GBStringHash( const GBString* string);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 
 #endif /* GBString_h */

@@ -30,13 +30,13 @@
 #ifndef GBProcessLock_h
 #define GBProcessLock_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
     
 
 
 #include <GBString.h>
+
+GB_BEGIN_DCL
 
 /*!
  * @discussion Creates a named file lock that will hold until GBProcessUnLock is invoked.
@@ -53,8 +53,6 @@ BOOLEAN_RETURN uint8_t GBProcessLock( int *pidFileHandler , const GBString* name
  */
 BOOLEAN_RETURN uint8_t GBProcessUnLock( int *pidFileHandler ) GB_DEPRECATED("5.5.2");
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBProcessLock_h */

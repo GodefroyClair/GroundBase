@@ -31,13 +31,12 @@
 #ifndef GBTimer_h
 #define GBTimer_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 //#include <sys/time.h>
 #include <GBObject.h>
 #include <GBRunLoopSource.h>
+#include <GBCommons.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBTimerClass;
 #define GBTimerClassName (const char*) "GBTimer"
@@ -102,8 +101,6 @@ BOOLEAN_RETURN uint8_t GBTimerIsActive(const GBTimer* timer) GB_NO_NULL_POINTERS
  */
 void GBTimerSetActive( GBTimer* timer , uint8_t active);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBTimer_h */

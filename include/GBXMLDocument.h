@@ -30,11 +30,12 @@
 #ifndef GBXMLDocument_h
 #define GBXMLDocument_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBXMLNode.h>
+#include <GBCommons.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBXMLDocumentClass;
 #define GBXMLDocumentClassName (const char*) "GBXMLDocument"
@@ -90,8 +91,6 @@ GBXMLNode* GBXMLDocumentGetRootNode( const GBXMLDocument* document);
 /* No need to release returned GBXMLNode */
 GBXMLNode* GBXMLDocumentCreateRootNode( GBXMLDocument* document , const char *name);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBXMLDocument_h */

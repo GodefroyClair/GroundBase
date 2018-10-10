@@ -32,7 +32,7 @@
 
 #include "../GBObject_Private.h"
 #include "GBContainer_Private.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 static void * GBList_ctor(void * _self, va_list * app);
 static void * GBList_dtor (void * _self);

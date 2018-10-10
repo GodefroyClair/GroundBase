@@ -32,15 +32,15 @@
 #ifndef GBDictionary_h
 #define GBDictionary_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBCommons.h>
 #include <GBObject.h>
 #include <GBString.h>
 #include <GBArray.h>
 #include <GBSequence.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBDictionaryClass;
 #define GBDictionaryClassName (const char*) "GBDictionary"
@@ -118,7 +118,6 @@ GBArray* GBDictionaryGetKeyList( const GBDictionary* dict);
  */
 void GBDictionaryIterateValues( const GBDictionary* dict , GBSequenceIterator method , void* context);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBDictionary_h */

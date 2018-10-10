@@ -32,12 +32,13 @@
 #ifndef GBFDSource_h
 #define GBFDSource_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBObject.h>
 #include <GBRunLoopSource.h>
+
+
+GB_BEGIN_DCL
 
 #define UNINITIALIZED_FD   (int) -1
 
@@ -80,9 +81,7 @@ void GBFDSourceShouldCloseOnDestruct( GBFDSource* source  , uint8_t shouldClose)
 GBSize GBFDSourceRead( GBFDSource* source , void* content , GBSize size) GB_WARN_UNUSED_RESULT GB_NO_NULL_POINTERS;
 GBSize GBFDSourceSend( GBFDSource* source , const void* data , GBSize dataLength ,int flags) GB_NO_NULL_POINTERS;
 GBSize GBFDSourceWrite( GBFDSource* source , const void* data , GBSize dataLength ) GB_NO_NULL_POINTERS;
-    
-#ifdef __cplusplus
-}
-#endif
+
+GB_END_DCL
 
 #endif /* GBFDSource_h */

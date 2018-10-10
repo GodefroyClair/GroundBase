@@ -30,12 +30,12 @@
 #ifndef GBSocket_h
 #define GBSocket_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <sys/socket.h> // socklen_t TODO : remove from public headers
 #include <GBFDSource.h>
+
+GB_BEGIN_DCL
 
 /*
  Creates and returns a socket that listens for TCP connections on a socket.
@@ -71,7 +71,6 @@ GBFDSource* GBDomainSocketConnectTo( const char*addr ,GBRunLoopSourceCallback ca
 BOOLEAN_RETURN uint8_t GBSocketWriteBlock( GBFDSource *source , const void* data , GBSize dataLength);
 BOOLEAN_RETURN uint8_t GBSocketReadBlock( GBFDSource* source , void* content , GBSize size);
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBSocket_h */

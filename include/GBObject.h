@@ -57,9 +57,7 @@
 #ifndef GBObject_h
 #define GBObject_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 
 #include <stdarg.h>
@@ -68,7 +66,7 @@ extern "C" {
 #include <GBCommons.h>
 #include <GBTypes.h>
 
-
+GB_BEGIN_DCL
 
 
 /*!
@@ -184,7 +182,6 @@ int GBObjectGetRefCount( GBRef object);
  */
 void GBRuntimeEnableInvalidReleaseDebug( uint8_t state);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBObject_h */

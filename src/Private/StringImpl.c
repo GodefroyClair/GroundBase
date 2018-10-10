@@ -17,7 +17,7 @@
 #include <string.h>
 
 #include "StringImpl.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 Array* atoms = NULL;
 

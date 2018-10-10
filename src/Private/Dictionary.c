@@ -28,7 +28,7 @@
 #include "LibUt/uthash.h"
 
 #include "Dictionary.h"
-#include "../GBAllocator.h"
+#include <GBAllocator.h>
 
 
 typedef struct

@@ -25,7 +25,7 @@
 
 #include "TimersWheel.h"
 #include "timeout.h"
-#include "../../GBAllocator.h"
+#include <GBAllocator.h>
 
 #define TICK_TIME (timeout_t) 1
 

@@ -31,13 +31,10 @@
 #ifndef GBSequenceType_h
 #define GBSequenceType_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <GBObject.h>
 #include <GBString.h>
 
+GB_BEGIN_DCL
 
 /*!
  * @typedef GBSequenceType
@@ -65,7 +62,7 @@ void GBSequenceIterateValues( const GBSequence* sequence , GBSequenceIterator me
 
 // needs release!
 GBArray* GBSequenceGetKeys( const GBSequence* sequence);
-#ifdef __cplusplus
-}
-#endif
+
+GB_END_DCL
+
 #endif /* GBSequenceType_h */

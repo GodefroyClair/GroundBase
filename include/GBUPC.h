@@ -34,9 +34,7 @@
 #ifndef GBUPC_h
 #define GBUPC_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+GB_BEGIN_DCL
 
 #include <GBBinCoder.h>
 #include <GBUPCEndPoint.h>
@@ -88,8 +86,6 @@ GB_ALWAYS_INLINE void GBUPCMessageInit( GBUPCMessage* msg)
 // needs release!
 GBBinCoder* GBUPCMessageReadObject( const GBUPCMessage* message);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
     
 #endif /* GBUPC_h */

@@ -24,12 +24,11 @@
 #ifndef GBJSON_h
 #define GBJSON_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBObject.h>
 
+GB_BEGIN_DCL
     
 /*!
  * @discussion Tries to parse a JSON formatted string and create an appropriate GBObject in return.
@@ -46,7 +45,6 @@ GBObject* GBJSONParse( const char* buffer , GBSize size);
  */
 char* GBJSONWriteBuffer( GBRef objectToWrite );
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBJSON_h */

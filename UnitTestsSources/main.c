@@ -58,6 +58,7 @@
 #include "testSourceAndDispatch.h"
 
 #include "testGBNumber.h"
+#include "testStackAlloc.h"
 
 int main()
 {
@@ -130,6 +131,9 @@ int main()
     testGBBinCoder5();
     testGBBinCoder6();
     
+    
+    testStackAlloc();
+    /*
 
     testUPCClient();
     testUPCService();
@@ -164,7 +168,7 @@ int main()
     //testGBUPCClient();
     //testGBUPCService();
 
-
+*/
 
 	const GBSize ret = GBObjectIntrospection(1);
 #ifndef DEBUG

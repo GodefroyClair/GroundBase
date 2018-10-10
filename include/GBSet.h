@@ -24,12 +24,11 @@
 #ifndef GBSet_h
 #define GBSet_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBContainer.h>
 
+GB_BEGIN_DCL
     
 /*!
  * @discussion An opaque type for a set.
@@ -61,7 +60,6 @@ GBRef GBSetIteratorGetNext( GBSetIterator* it );
 void GBSetIteratorFree(GBSetIterator* it);
 */
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBSet_h */

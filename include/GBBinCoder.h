@@ -30,15 +30,14 @@
 #ifndef GBBinCoder_h
 #define GBBinCoder_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 
 #include <GBObject.h>
 #include <GBString.h>
 #include <GBNumber.h>
 #include <GBSequence.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBBinCoderClass;
 #define GBBinCoderClassName (const char*) "GBBinCoder"
@@ -106,9 +105,7 @@ BOOLEAN_RETURN uint8_t GBBinCoderWriteBuffer( const GBBinCoder* coder , char*buf
 const uint8_t* GBBinCoderGetBuffer( const GBBinCoder* coder);
 
     
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
     
 #endif /* GBBinCoder_h */

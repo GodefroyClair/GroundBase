@@ -25,13 +25,14 @@
 #ifndef GBSharedMem_h
 #define GBSharedMem_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 
 #include <GBObject.h>
 #include <GBString.h>
+
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBSharedMemClass;
 #define GBSharedMemClassName (const char*) "GBSharedMem"
@@ -68,8 +69,6 @@ BOOLEAN_RETURN uint8_t GBSharedMemWrite( GBSharedMem* sharedMem , const void* da
 
 void* GBSharedMemGetWriteHandle( GBSharedMem* sharedMem);
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
 
 #endif /* GBSharedMem_h */

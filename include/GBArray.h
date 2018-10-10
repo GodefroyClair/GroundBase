@@ -32,13 +32,13 @@
 #ifndef GBArray_h
 #define GBArray_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 #include <GBCommons.h>
 #include <GBObject.h>
 #include <GBContainer.h>
+
+GB_BEGIN_DCL
 
 extern GBObjectClassRef GBArrayClass;
 #define GBArrayClassName (const char*) "GBArray"
@@ -91,7 +91,6 @@ for (GBIndex COMBINE(__iter , __LINE__) = 0;\
 (COMBINE(__iter , __LINE__)<GBArrayGetSize(array) ) && ( value = GBArrayGetValueAtIndex(array, COMBINE(__iter , __LINE__)));\
 COMBINE(__iter , __LINE__)++)
 
-#ifdef __cplusplus
-}
-#endif
+GB_END_DCL
+
 #endif /* GBArray_h */
