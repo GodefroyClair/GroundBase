@@ -40,7 +40,6 @@ namespace GB
         
         /*!
          * @discussion Initialize an empty GB::PropertyList instance.
-         * @return an empty GB::PropertyList instance. Use `GB::PropertyList::writeRootObject` to add content.
          */
         PropertyList():
         Object(GBPropertyListInit() )
@@ -50,7 +49,6 @@ namespace GB
         /*!
          * @discussion Initialize an  GB::PropertyList instance from the content of a file.
          * @param filePath An accessible filePath to a valid PropertyList file. Will be invalid if empty.
-         * @return an initialized GB::PropertyList instance. Use `GB::PropertyListGetRoot` to access content.
          */
         PropertyList( const std::string &filePath):
         Object( GBPropertyListInitWithFile( GBStrMake( filePath) ) )

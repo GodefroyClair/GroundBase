@@ -47,7 +47,6 @@ namespace GB
         
         /*!
          * @discussion Creates an empty GB::Dictionary instance.
-         * @return an empty GB::Dictionary instance
          */
         Dictionary():
         Object( GBDictionaryInit())

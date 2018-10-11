@@ -21,21 +21,16 @@ bool testPropertyList()
     GB::PropertyList propList;
     {
         // valid prop list
-        
-        
+
         assert(propList.isValid() );
-        
-        
+
         GB::Dictionary dict;
         dict.addValue(GB::Variant("Test"), "keyTest");
         dict.addValue(GB::Variant("Test2"), "keyTest2");
         dict.addValue(GB::Variant(123.1f), "keyFloat");
         dict.addValue(GB::Variant(-123.123), "keyDouble");
         dict.addValue(GB::Variant(-12312), "keyInt");
-        
-        
-        
-        
+
         assert(propList.writeRootObject( dict));
         
         assert(propList.getRoot().contains("keyTest"));
