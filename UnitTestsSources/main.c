@@ -134,7 +134,7 @@ int main()
     
     testStackAlloc();
 
-
+/*
     testUPCClient();
     testUPCService();
     
@@ -168,7 +168,7 @@ int main()
     //testGBUPCClient();
     //testGBUPCService();
 
-
+*/
 
 	const GBSize ret = GBObjectIntrospection(1);
 #ifndef DEBUG

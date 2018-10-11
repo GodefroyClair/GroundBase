@@ -2,6 +2,7 @@
 
 The GroundBase library defines a base layer of functionality that is required for almost all applications. 
  It provides primitive classes, introduces several paradigms and is designed with these goals in mind:
+ 
  - Provide a small set of basic utility classes.
  - Make software development easier by introducing consistent conventions.
  - Provide a level of OS independence, to enhance portability.
@@ -27,7 +28,7 @@ GroundBase Core is written in C, and an API is also available in C++.
 - Documentation will be generated inside 'Documentation' folder.
 
 
-# **GroundBase classes an Modules**
+# **GroundBase classes and Modules**
 
 
 ## **GBObject**

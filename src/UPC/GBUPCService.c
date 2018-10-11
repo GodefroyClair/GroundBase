@@ -166,11 +166,6 @@ static GBRef GBUPCServiceGetDescription (const void * _self)
 }
 
 
-GBUPCService* GBUPCServiceInitWithName_OnStack(const GBString* serviceName , uint8_t* buffer )
-{
-    
-    return GBObjectAlloc(GBStackAllocator, GBUPCServiceClass , serviceName);
-}
 
 GBUPCService* GBUPCServiceInitWithName(const GBString* serviceName )
 {

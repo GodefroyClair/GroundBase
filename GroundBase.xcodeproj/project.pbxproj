@@ -617,8 +617,8 @@
 		593AD5AB1FAC5865005402D2 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				59D9B862216D220800887BFE /* GBAllocator.h */,
 				593AD5BF1FAC5865005402D2 /* GroundBase.h */,
+				59D9B862216D220800887BFE /* GBAllocator.h */,
 				593AD5BC1FAC5865005402D2 /* GBTimer.h */,
 				593AD5AD1FAC5865005402D2 /* GBTypes.h */,
 				593AD5B21FAC5865005402D2 /* GBCommons.h */,

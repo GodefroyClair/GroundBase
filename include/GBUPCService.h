@@ -109,7 +109,7 @@ typedef struct
  */
 GBUPCService* GBUPCServiceInitWithName(const GBString* serviceName );
     
-GBUPCService* GBUPCServiceInitWithName_OnStack(const GBString* serviceName , uint8_t* buffer );
+
 
 void GBUPCServiceSetCallBacks( GBUPCService* service ,GBUPCServiceCallBacks callbacks );
 
